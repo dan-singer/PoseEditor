@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px;
+    /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer,
+.push {
+    height: 142px;
+    /* .push must be the same height as .footer */
+}
+
+
+/*Added by Dan Singer*/
+.table{
+}
+
+.table > ul{
+    padding-left: 0px;
+    list-style: none;
+}
+.table > ul > li:first-child{
+    padding-left: 15px;
+    font-size:18px;
+    background-color: #454545;
+}
+.table > ul > li:first-child:before{
+    content: "■";
+    color: #09FF00;
+}
+
+.table > ul > li{
+    padding-left: 30px;
+    font-size:16px;
+    background-color:#413A58;
+    margin: 0px;
+}
+
+
+.radio-button{
+    background-color: #413A58;
+    margin:0px;
+}
+
+
+/**Based off of the code from http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/ by Stephen Morley*/
+.radio-button > input[type="radio"]{
+    width: 2em;
+    margin: 0;
+    margin-left: 8px;
+    padding: 0;
+    font-size: 1em;
+    opacity: 0;
+}
+
+.radio-button > input[type="radio"] + label{
+    display: inline-block;
+    margin-left: -2em;
+    line-height: 1.5em;
+}
+
+.radio-button > input[type="radio"] + label > span{
+    display: inline-block;
+    width: .875em;
+    height: .875em;
+    margin: .25em;
+    border: .0625em solid rgb(192,192,192);
+    border-radius: .25em;
+    background: rgb(224,224,224);
+    background-image: linear-gradient(rgb(240,240,240), rgb(224,224,224));
+    vertical-align: bottom;
+}
+
+.radio-button > input[type="radio"]:checked + label > span > span{
+    display: block;
+    width: .5em;
+    height: .5em;
+    margin: .125em;
+    border: .0625em solid rgb(115,153,77);
+    border-radius: .125em;
+    background-image: linear-gradient(rgb(0,0,0), rgb(0,0,0));
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Pose Editor</title>
+
+    <link rel="shortcut icon" href="" />
+
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/reg_form.css">
+    <!--<link href="css/styles.css" rel="stylesheet">-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="fonts/font-awesome.css" rel="stylesheet">
+    <link href="css/pose-editor.css" rel="stylesheet" >
+
+
+
+    <!-- Google font (If Use) -->
+
+    <link rel="canonical" href="https://codepen.io/jeffaudio/pen/gaVmyX">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="WebBuild/Build/FileSave.js"></script>
+    <script src="WebBuild/Build/UnityLoader.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "WebBuild/Build/July10_E.json");
+    </script>
+    <style>
+        #slider1::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, #09F 48%, lightgray 48%)
+        }
+
+        #slider1::-moz-range-track {
+            background: linear-gradient(to right, #09F 48%, lightgray 48%)
+        }
+    </style>
+    <style class="cp-pen-styles">
+        .slider-container {
+            border: none;
+            padding: 5px;
+            background: blue;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            /* Hides the slider so that custom slider can be made */
+            width: 100%;
+            /* Specific width is required for Firefox. */
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+            /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+        }
+
+        input[type=range]::-ms-track {
+            width: 100%;
+            cursor: pointer;
+            background: transparent;
+            /* Hides the slider so custom styles can be added */
+            border-color: transparent;
+            color: transparent;
+        }
+
+        .range-label {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .range-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 5px;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 0;
+            margin-top: 5px;
+            height: 30px;
+            background: #39244E;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #aeaeae;
+            cursor: pointer;
+            margin-top: -7px;
+        }
+
+        .slider::-moz-range-thumb {
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #aeaeae;
+            cursor: pointer;
+            margin-top: -7px;
+        }
+
+        .slider::-ms-thumb {
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #aeaeae;
+            cursor: pointer;
+            margin-top: -7px;
+            margin-top: -3px;
+        }
+
+        .slider::-webkit-slider-runnable-track {
+            height: 6px;
+            border-radius: 6px;
+            background: blue;
+        }
+
+        .slider::-moz-range-track {
+            height: 6px;
+            border-radius: 6px;
+            background: blue;
+        }
+
+        .slider::-moz-focus-outer {
+            border: 0;
+        }
+
+        .slider::-ms-track {
+            height: 6px;
+            border-radius: 6px;
+            background: blue;
+        }
+
+        .slider::-ms-fill-lower {
+            background: #09f;
+            border-radius: 6px;
+        }
+
+        .slider::-ms-fill-upper {
+            background: lightgray;
+            border-radius: 6px;
+        }
+
+        .slider::-ms-tooltip {
+            display: none;
+        }
+
+        .main {
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+
+    <!-- main wrapper start -->
+    <div class="main">
+
+        <div class="row" style="background:#413f4c;padding:0;">
+            <div class="col-md-4">
+                <a href="index.html">
+                    <i class="fa fa-home" style="font-size:27px;color:#fefefe;margin-top:4px;"></i>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h1 class="merger_top_head">Pose Editor</h1>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-info btn-sm pull-right" style="margin-top:3px;"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign-in</button>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="table" id="library">
+                    <ul>
+                        <li>
+                            Library
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <!--Webplayer goes here-->
+                <div id="gameContainer" style="width:850px; height:600px; margin:auto;">
+
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="table" id="quick-pick">
+                    <ul  style="margin:0px;">
+                        <li>
+                            Quick Pick
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main wrapper start -->
+
+
+
+    <script src="js/pose-editor.js"></script>
+
+</body>
+
+</html>
