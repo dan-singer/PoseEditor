@@ -33,7 +33,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "WebBuild/Build/July10_E.json");
+        var gameInstance = UnityLoader.instantiate("gameContainer", "WebBuild/Build/July11_B.json");
     </script>
     <style>
         #slider1::-webkit-slider-runnable-track {
@@ -231,6 +231,23 @@
                     </ul>
 
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <button id="export" onclick="Export();">Export</button>
+            </div>
+            <div class="col-lg-6">
+                <div style="display:block; width:50%; margin:auto; text-align:center">
+                    <button id="megaplay" class="toolbar-button" style="background-image:url('../images/loop-arrow.png');"></button>
+                    <button id="play" class="toolbar-button" style="background-image:url('../images/Play.png');"></button>
+                    <button id="reset-curve" class="toolbar-button" style="background-image:url('../images/reply.png');"></button>
+                    <button id="reset-clip" class="toolbar-button" style="background-image:url('../images/refresh.png');"></button>
+                </div>
+
+            </div>
+            <div class="col-lg-3">
+                <img id="axes" src="images/Axes.png" />
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -24,6 +25,7 @@ body {
 
 /*Added by Dan Singer*/
 .table{
+    user-select: none;
 }
 
 .table > ul{
@@ -48,6 +50,19 @@ body {
 }
 
 
+.table > ul > li:first-child:hover{
+    background-color: #454545;
+
+}
+
+.table > ul > li:hover{
+    background-color:white;
+}
+
+
+
+
+
 .radio-button{
     background-color: #413A58;
     margin:0px;
@@ -63,6 +78,11 @@ body {
     font-size: 1em;
     opacity: 0;
 }
+
+.radio-button:hover{
+    background-color: white;
+}
+
 
 .radio-button > input[type="radio"] + label{
     display: inline-block;
@@ -90,4 +110,37 @@ body {
     border: .0625em solid rgb(115,153,77);
     border-radius: .125em;
     background-image: linear-gradient(rgb(0,0,0), rgb(0,0,0));
+}
+
+
+.toolbar-button{
+    margin:auto;
+    border:none;
+    margin-left: 20px;
+    margin-right:20px;
+    width: 32px;
+    height: 32px;
+    background-color: #413A58;
+    background-size: contain;
+}
+
+.toolbar-button:hover{
+    background-color: #412a58;
+}
+
+
+#axes{
+    transform: translate(0%, -50%);
+    margin:auto;
+    display:block;
+}
+
+#export{
+    margin:auto;
+    display:block;
+    background-color:#413A58;
+}
+
+#export:hover{
+    background-color:#412a58;
 }
